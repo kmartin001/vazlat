@@ -1,6 +1,8 @@
 # Rendszerterv
 ## 1. A rendszer célja
 
+A Top G's nevű csapat feladata egy olyan felület fejlesztése, ami széleskörben elérhető, egyszerű megoldást nyújt különböző felmérések elvégzésére. Az alkalmazás feladatai közé tartozik kérdőívek létrehozása, kitölthetősége, kezelése, esetleg ezek törlése. Szükség van még a kérdőívek kiértékelésére, az ehhez tartozó felület létrehozására is. A Kérdőív létrehozásakor kötetlen számú kérdés hozzáadásához kell lehetőséget biztosítani, illetve vázat kell adni, hogy a felhasználó könnyen, előképzettség nélkül tudjon önállóan kérdőívet létrehozni. Mindenképpen szükséges még egy bejelentkező felület is, amiben a be nem lépett felhaználók korlátozott jogokat kapnak (nem hozhatnak létre, vagy törölhetnek kérést/kérdőívet, csak kitölteni tudják ezeket.
+
 A Top G's nevű csapat feladata, egy olyan alkalmazás fejlesztése, ami egy iskola funkcionalitását és környezetszennyezését hivatott pozitív irányba terelni. Az alkalmazás feladati közé tartozik, az iskolán belül elérhető diákok, ki listázása, valamint ezek módosítása, új diák esetén a megjelenítendő listáhpz a hozzáadása, amennyiben egy diák elballagott vagy iskolát váltott, ebben az esetben a diákot el is lehessen távolítani az adatbázisból. Az iskola jelenleg nem rendelkezik, semmilyen alkalmazással, ami esetleges módon megkönnyíthetné a munkáját. Füzetekbe, lapokon tartják számon az aktuális diákokat, mivel emberi munkáról van szó az adminisztrálásban is így a hibák gyakoriak, a papír alapú rendszer lassú, nem megbízható. Az implementációt X,Y segítségével valósítjuk meg.
 
 ## 2. Projektterv
@@ -46,10 +48,16 @@ A Top G's nevű csapat feladata, egy olyan alkalmazás fejlesztése, ami egy isk
 
 | Id | Modul | Név | Leírás |
 | :---: | --- | --- | --- |
-| K1 | Felület | Tanuló hozzáadása | Tanulót tudunk felvinni az adazbázisba |
-| K2 | Felület | Tanuló szerkesztése | Tanuló adatait tudjuk megváltoztatni az adazbázisba |
-| K3 | Felület | Tanuló törlése | Tanulót tudunk törölni az adazbázisból  |
-| K4 | Felület | Tanuló adatainak áttekintése | Egy keresett tanuló adatát tudjuk megtekinteni |
+| K1 | Felület | Remember me | Tick-box a belépési adatok tárolásának eldöntésére |
+| K2 | Felület | Login | A megadott felhasunálónév és jelszó kombináció beléptetése a felületre |
+| K3 | Felület | Add new question | Új kérdés hozzáadása a kérdőívhez  |
+| K4 | Felület | Register | Új felhasználó hozzáadása a felület adatbázisához |
+| K5 | Felület | Create Questionnaire | Új kérdőív hozzáadása a felület adatbázisához |
+| K6 | Felület | Add question | Új kérdés hozzáadása a kérdőívhez |
+| K7 | Felület | Add new question | Elnavigál a K6 funkció felületéhez |
+| K8 | Felület | Delete question | Törli a kiválasztott/akkor szerkesztett kérdést |
+| K9 | Felület | Megoszthatóság | Link, amellyel bárki a kérdőívhez navigálhatx  |
+| K10 | Felület | Complete Survey | A kérdőív kitöltésének véglegesítése, válaszok leadása |
 
 ### Támogatott eszközök
 
@@ -59,15 +67,23 @@ Mivel egy webes felületet készítünk, ezért elegendő egy számítógép vag
 
 ### 5.1 Rendszerszereplők
 
-- felhasználó
+- belépett felhasználó (aki készíti a kérdőívet)
+- felhasználó (aki közvetve, a linken keresztül, belépés nélkül éri el a kérdőívet)
 
 ### 5.2 Menühierarchiák
 
+  - Belépett felhasználó
+    - Kérdőívet hozhat létre
+    - Kérdőívet tölthet ki
+    - Kérdéseket adhat a kérdőívéhez
+    - Kérdéseket törölhet a kérdőívéből
+    - Láthatja a kérdőív statisztikáit
+    - Ki- és bejelentkezhet a felületre
+    - Megoszthat kérdőíveket
   - Felhasználó
-    - Adatbázist bővítheti.
-    - Törölhet az adatbázisból.
-    - Módosíthat az adatbázisban szereplő tanuló adatain.
-    - Kereshet az adatbázisból.
+    - Kérdőívet tölthet ki
+    - Továbbadhatja a már megkapott linket a kérdőívhez
+
 
 ## 6. Fizikai környezet
 
@@ -76,11 +92,12 @@ Mivel egy webes felületet készítünk, ezért elegendő egy számítógép vag
   - **Fejlesztői eszközök:**
     - **Visual Studio Code**
     - **XAMPP**
+    - **Laravel**
 
 
 ## 7. Architekturális terv
 
-A rendszer tökéletes működéséhez szükség van egy adatbázis szerverre, ebben az esetben MySql-t használunk. A bootstrap felel a reszponzív webdesign-ért. A backend php alapon nyugszik.
+A rendszer tökéletes működéséhez szükség van egy adatbázis szerverre, ebben az esetben MySql-t használunk. A bootstrap felel a reszponzív webdesign-ért. A backend php alapon nyugszik, laravel keretrendszerrel.
 
 ## 8. Adatbázis terv
 
