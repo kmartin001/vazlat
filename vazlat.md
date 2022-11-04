@@ -1,9 +1,7 @@
 # Rendszerterv
 ## 1. A rendszer célja
 
-A Top G's nevű csapat feladata egy olyan felület fejlesztése, ami széleskörben elérhető, egyszerű megoldást nyújt különböző felmérések elvégzésére. Az alkalmazás feladatai közé tartozik kérdőívek létrehozása, kitölthetősége, kezelése, esetleg ezek törlése. Szükség van még a kérdőívek kiértékelésére, az ehhez tartozó felület létrehozására is. A Kérdőív létrehozásakor kötetlen számú kérdés hozzáadásához kell lehetőséget biztosítani, illetve vázat kell adni, hogy a felhasználó könnyen, előképzettség nélkül tudjon önállóan kérdőívet létrehozni. Mindenképpen szükséges még egy bejelentkező felület is, amiben a be nem lépett felhaználók korlátozott jogokat kapnak (nem hozhatnak létre, vagy törölhetnek kérést/kérdőívet, csak kitölteni tudják ezeket.
-
-A Top G's nevű csapat feladata, egy olyan alkalmazás fejlesztése, ami egy iskola funkcionalitását és környezetszennyezését hivatott pozitív irányba terelni. Az alkalmazás feladati közé tartozik, az iskolán belül elérhető diákok, ki listázása, valamint ezek módosítása, új diák esetén a megjelenítendő listáhpz a hozzáadása, amennyiben egy diák elballagott vagy iskolát váltott, ebben az esetben a diákot el is lehessen távolítani az adatbázisból. Az iskola jelenleg nem rendelkezik, semmilyen alkalmazással, ami esetleges módon megkönnyíthetné a munkáját. Füzetekbe, lapokon tartják számon az aktuális diákokat, mivel emberi munkáról van szó az adminisztrálásban is így a hibák gyakoriak, a papír alapú rendszer lassú, nem megbízható. Az implementációt X,Y segítségével valósítjuk meg.
+A Top G's nevű csapat feladata egy olyan felület fejlesztése, ami széleskörben elérhető, egyszerű megoldást nyújt különböző felmérések elvégzésére. Az alkalmazás feladatai közé tartozik kérdőívek létrehozása, kitölthetősége, kezelése, esetleg ezek törlése. Szükség van még a kérdőívek kiértékelésére, az ehhez tartozó felület létrehozására is. A Kérdőív létrehozásakor kötetlen számú kérdés hozzáadásához kell lehetőséget biztosítani, illetve vázat kell adni, hogy a felhasználó könnyen, előképzettség nélkül tudjon önállóan kérdőívet létrehozni. Mindenképpen szükséges még egy bejelentkező felület is, amiben a be nem lépett felhaználók korlátozott jogokat kapnak (nem hozhatnak létre, vagy törölhetnek kérést/kérdőívet, csak kitölteni tudják ezeket. Az felület fontosságához hozzájáruk az is, hogy ezzel megszabadulhatnak a felesleges papír pazarlástól (papír alapú kérdőívek), senkinek sem kell egy fix helyen lenni a kitöltéshez és még a hatékonyság is nőni fog
 
 ## 2. Projektterv
 
@@ -21,26 +19,26 @@ A Top G's nevű csapat feladata, egy olyan alkalmazás fejlesztése, ami egy isk
 
 |Funkció                  | Feladat                                | Prioritás | Becslés (nap) | Aktuális becslés (nap) | Eltelt idő (nap) | Becsült idő (nap) |
 |-------------------------|----------------------------------------|-----------|---------------|------------------------|------------------|---------------------|
-|Követelmény specifikáció |Megírás                                 |         1 |             1 |                      1 |                1 |                   1 |             
-|Funkcionális specifikáció|Megírás                                 |         1 |             1 |                      1 |                1 |                   1 |
-|Rendszerterv             |Megírás                                 |         1 |             1 |                      1 |                1 |                   1 |
-|Program                  |Képernyőtervek elkészítése              |         2 |             1 |                      1 |                1 |                   1 |
-|Program                  |Prototípus elkészítése                  |         3 |             8 |                      8 |                8 |                   8 |
-|Program                  |Alapfunkciók elkészítése                |         3 |             8 |                      8 |                8 |                   8 |
-|Program                  |Tesztelés                               |         4 |             2 |                      2 |                2 |                   2 |
+|Követelmény specifikáció |Megírás                                 |         1 |             2 |                      2 |                2 |                   2 |             
+|Funkcionális specifikáció|Megírás                                 |         1 |             2 |                      2 |                2 |                   2 |
+|Rendszerterv             |Megírás                                 |         1 |             2 |                      2 |                2 |                   2 |
+|Program                  |Képernyőtervek elkészítése              |         2 |             2 |                      2 |                2 |                   2 |
+|Program                  |Prototípus elkészítése                  |         3 |             17 |                      17 |                17 |                   17 |
+|Program                  |Alapfunkciók elkészítése                |         3 |             17 |                      17 |                17 |                   17 |
+|Program                  |Tesztelés                               |         4 |             5 |                      5 |                5 |                   5 |
 
 ### 2.4 Mérföldkövek:
 
  - 09.26 Rendszerterv
  - 09.29 Funkcionális specifikáció
- - 09.29 Követelmény specifikáció
+ - 09.29 Követelmény specifikáció           ******* ezt még átírni aktuálisra ******
  - 10.03 Adatbázis kialakítása
  - 10.09 Frontend design megtervezése
  - 10.09 Backend funkciók elkészítése
 
 ## 3. Üzleti folyamatok modellje
 
-![Üzletifolyamat](../Project/Pictures/uzleti_folyamatok_modellje.png)
+
 
 ## 4. Követelmények
 
@@ -136,7 +134,7 @@ COMMIT;
 
 ## 9. Implementációs terv
 
-A webes felület HTML, CSS és PHP nyelven fog elkészülni. A nem egymáshoz kapcsolódó funkciókat amennyire csak lehet, elkülönítjük, úgy csatoljuk egymáshoz ezzel is egy átláthatóbb, könnyebben változtatható lesz a source code-unk. Az adatokat MYSQL adatbázisban fogjuk tárolni.
+A webes felület HTML, CSS és PHP nyelven fog elkészülni, Laravel keretrendszerrel. A nem egymáshoz kapcsolódó funkciókat amennyire csak lehet, elkülönítjük, úgy csatoljuk egymáshoz ezzel is egy átláthatóbb, könnyebben változtatható lesz a source code-unk. Az adatokat MYSQL adatbázisban fogjuk tárolni.
 
 ## 10. Tesztterv
 
